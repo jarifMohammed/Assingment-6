@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    scroll-behavior: smooth;
+}
+
+.font{
+    font-family: "Lato", sans-serif !important;
+}
+
+.width{
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+
+
+/* ========== */
+
+.active{
+    background-color: #29bfca1a;
+    border: 1.5px solid rgb(14, 122, 129);
+    border-radius: 50px;
+    transition-duration: 0.4s;
+}
+
+.card-gird{
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    gap: 1rem;
+}
+
+@media screen and (max-width:430px) {
+    .card-gird{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+.loader-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;        
+}

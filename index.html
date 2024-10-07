@@ -1,0 +1,177 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- FAV ICON -->
+    <title>Peddy-Pet Adoption Platform</title>
+    <!-- Font -->
+    <link rel="icon" type="image/x-icon" href="/images/logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Daisy Ui -->
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+ 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/style.css">
+  </head>
+
+<body>
+    <header>
+        <nav class="flex items-center justify-between p-5 bg-white ">
+            <div class="logo flex items-center gap-3 font-bold text-2xl">
+                <img src="/images/logo.webp" alt="Peddy" class="h-8"> 
+                <p>Peddy</p>
+            </div>
+            
+            <div class="hidden md:flex gap-4">
+                <button class="px-4 py-2 hover:bg-gray-200 rounded transition">Home</button>
+                <button class="px-4 py-2 hover:bg-gray-200 rounded transition">Shop</button>
+                <button class="px-4 py-2 hover:bg-gray-200 rounded transition">Contact</button>
+            </div>
+            
+            <div class="mr-2 md:mr-10">
+                <img src="https://img.icons8.com/ios-glyphs/30/user--v1.png" alt="User" class="h-8">
+            </div>
+        
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-500 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md absolute right-0 w-full z-50">
+            <button class="block px-4 py-2 hover:bg-gray-200">Home</button>
+            <button class="block px-4 py-2 hover:bg-gray-200">Shop</button>
+            <button class="block px-4 py-2 hover:bg-gray-200">Contact</button>
+        </div>
+        
+        <script>
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+        
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        </script>
+        
+     </header>
+     <section>
+        <div>
+            <h4  class="text-2xl font-bold text-[#13131399] text-center mt-2 mb-6">Bringing Families Togather</h4>
+            <h1 class="lg:text-6xl text-4xl font-black text-center text-[#131313]  mb-6">Your Path to Adoption <br> Satrts Here</h1>
+            <p class="text-center text-base">Pet adoption refers to the process of taking a pet from a shelter, rescue organization <br>
+                  This process not only provides a loving environment for the pet but also helps reduce the number of homeless animals in shelters.</p>
+                <div class="text-center mt-5">
+                    <button class="btn bg-[#0E7A81] text-white text-sm px-6"><a href="#main">View More</a></button>
+                </div>
+        </div>
+     </section>
+     <section class="flex justify-center items-center mt-10 mb-20">
+        <img class="text-center" src="images/pet.webp" alt="">
+    </section>
+
+    <!-- main section starts from here -->
+     <main id="main" class="mb-20">
+        <section class="width lg:px-0 px-3">
+            <h2 class="lg:text-4xl text-3xl font-black text-center mb-6">Adopt Your Best Friend</h2>
+            <p class="text-center text-[#131313B3] mb-12">Pet adoption refers to the process of taking a pet from a shelter, rescue organization, or foster home into a permanent <br>
+                This process not only provides a loving environment for the pet but also helps reduce the number of homeless animals in shelters</p>
+        </section>
+        
+            <div id="category-btn-section" class="flex flex-wrap justify-evenly items-center mb-8 gap-2 mx-5 lg:mx-10"></div>
+        
+        <section class="lg:px-0 px-3 width flex justify-between items-center mb-8">
+            <p class=" ml-10 font-black text-2xl">Best Deal for You</p>
+            <div class="lg:px-10 flex justify-between items-center"><button id="sort-btn" class="btn bg-[#0E7A81] text-white text-xm px-6 font-bold rounded-xl">Sort By Price</button></div>
+        </section>
+        
+        
+        <section id="card-section" class="card-gird  width gap-4 lg:px-0 px-4">
+            
+            <div id="card-container" class="grid  grid-cols-1 lg:grid-cols-3 border b-2px gap-4"> 
+            </div>
+            <div id="like-div" class="border-2 rounded-lg grid grid-cols-2 p-4 gap-4 overflow-y-auto"></div>
+            
+        </section>
+        <div id="loader" class="loader-overlay loader-container">
+            <span class="loading loading-bars  loading-lg"></span>
+        </div>
+        <!-- Open the modal using ID.showModal() method -->
+<button  class="btn hidden" onclick="customModal.showModal()">open modal</button>
+<dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="modal-content"></div>
+    <div class="modal-action flex justify-start">
+      <form method="dialog">
+        
+        <button class="btn  text-[#0E7A81]">Cancel</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<section>
+    
+    <dialog id="adoptModal" class="modal modal-bottom sm:modal-middle fixed inset-0 flex items-center justify-center z-50">
+      <div class="modal-box max-w-md w-full p-4 sm:p-6 bg-white rounded-lg shadow-lg">
+        <div id="modal-contents" class="text-center">
+            <div class="flex justify-center"><img  src="https://img.icons8.com/emoji/48/confetti-ball.png" alt="confetti-ball"/></div>
+            <h2 class="text-2xl sm:text-4xl font-black">Congratulations!</h2>
+            <p class="text-sm sm:text-base">Adoption Process is Starting for your Pet</p>
+            <h1 id="count" class="text-4xl sm:text-6xl font-black">3</h1>
+        </div>
+        
+          
+        </div>
+      
+    </dialog>
+</section>
+
+
+
+
+</main>
+<!-- footer -->
+<footer>
+    <footer class="w-full bg-[#131313]">
+        <section class="width py-20 flex lg:justify-between lg:flex-row flex-col gap-12 lg:px-0 px-16">
+            <div class="ml-5 text-white flex flex-col gap-2 items-start">
+                <a class="p-0 btn btn-ghost text-3xl font-black text-white"><img src="images/logo.webp" alt="">Peddy</a>
+                <p>Location: av. Washington 165, NY CA 54003</p>
+                <p>Phone: +31 85 964 47 25</p>
+                <p>Email: info@yourdomain.com</p>
+                <p>Openings hours: 9.00 AM - 5.00 PM</p>
+            </div>
+            <div class="text-white flex flex-col gap-2 items-start">
+                <h4 class="font-black text-xl">Useful Links</h4>
+                <p>Home</p>
+                <p>About Us</p>
+                <p>Foundation</p>
+                <p>Contact</p>
+                <p>Animals</p>
+            </div>
+            <div class=" mr-5 text-white flex flex-col gap-2 items-start">
+                <h4 class="font-black text-xl">Drop a message</h4>
+                <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                <button class="btn bg-[#0E7A81] border-none text-white">Subscribe</button>
+            </div>
+        </section>
+
+    </footer>
+    
+</footer>
+<script src="/script.js"></script>
+<script src="/showCards.js"></script>
+<script  src="/sort.js"></script>
+
+</body>
+</html>
+    
