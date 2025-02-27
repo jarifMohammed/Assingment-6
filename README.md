@@ -21,4 +21,4 @@ This project is a web application for  listing the pet adpoting. It aims to help
 
 ##Live link
 
-[visit live link](https://peaceful-daffodil-c41b5a.netlify.app/)
+[visit live link](https://pet-shop-bd.netlify.app/)
